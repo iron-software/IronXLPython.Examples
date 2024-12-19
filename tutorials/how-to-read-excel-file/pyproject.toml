@@ -1,0 +1,9 @@
+[project]
+name = "How To Read Excel File"
+version = "1.0.0"
+description = "Code examples demonstrating IronXL for Python Feature: How To Read Excel File"
+license = { file = "LICENSE" }
+readme = "README.md"
+homepage = "https://github.com/iron-software/IronXLPython.Examples"
+keywords = ["IronXL for Python", "python", "How To Read Excel File", "ironxlpython.examples", "Tutorial"]
+dependencies = ["ironxl==2024.11.16"]

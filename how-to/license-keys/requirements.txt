@@ -1,0 +1,2 @@
+# IronXL for Python
+ironxl==2024.11.16

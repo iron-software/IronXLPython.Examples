@@ -1,0 +1,9 @@
+[project]
+name = "License Keys"
+version = "1.0.0"
+description = "Code examples demonstrating IronXL for Python Feature: License Keys"
+license = { file = "LICENSE" }
+readme = "README.md"
+homepage = "https://github.com/iron-software/IronXLPython.Examples"
+keywords = ["IronXL for Python", "python", "License Keys", "ironxlpython.examples", "How-To"]
+dependencies = ["ironxl==2024.11.16"]

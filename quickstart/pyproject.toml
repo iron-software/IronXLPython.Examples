@@ -1,0 +1,9 @@
+[project]
+name = "Quickstart"
+version = "1.0.0"
+description = "Code examples demonstrating IronXL for Python Feature: Quickstart"
+license = { file = "LICENSE" }
+readme = "README.md"
+homepage = "https://github.com/iron-software/IronXLPython.Examples"
+keywords = ["IronXL for Python", "python", "Quickstart", "ironxlpython.examples", "Introduction"]
+dependencies = ["ironxl==2024.11.16"]

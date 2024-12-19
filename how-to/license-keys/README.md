@@ -3,46 +3,48 @@
 ***Based on <https://ironsoftware.com/how-to/license-keys/>***
 
 
-## How to Acquire a License Key
+## Obtaining a License Key
 
-Obtaining an IronXL license key enables the deployment of your project in a live environment free from any limitations or watermarking.
+To deploy your project live without any limitations or watermarks, obtaining an IronXL license key is essential.
 
-You can [purchase a license here](https://ironsoftware.com/python/excel/licensing/) or obtain a [free 30 day trial key here](trial-license).
+You can [purchase a license here](https://ironsoftware.com/python/excel/licensing/) or opt for a <a class='js-modal-open' data-modal-id='trial-license'>free 30-day trial key here</a>.
 
----
+<hr class="separator">
 
-## Step 1: Incorporate IronXL as a Dependency in Your Python Project
+## Step 1: Install IronXL in Your Python Project
 
-To add IronXL to your Python project, you should install it through **pip**. In your command line interface, input the following:
+To add IronXL to your Python project, you'll need to include it as a dependency. This can be done through **pip**, the popular Python package installation tool. Open a command terminal and run:
 
 ```shell
 pip install ironxl
 ```
 
-This command ensures IronXL is installed in your system and available for import. IronXL for Python utilizes the IronXL .NET library, based on .NET 6.0. Make sure the [.NET 6.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) is installed on your computer to use IronXL for Python efficiently.
+This command ensures IronXL is installed and ready for use within your project.
 
----
+It's important to note that IronXL for Python is built on the IronXL .NET library, which requires [.NET 6.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) to be installed on your system.
+
+<hr class="separator">
 
 ## Step 2: Implement Your License Key
 
-Initially, you should input your license or trial key by setting up the `LicenseKey` attribute within your Python script, prior to using IronXL functionalities.
+After obtaining your license, the next step is to embed your license key or trial key in your Python script. This should be done at the script's commencement before utilizing IronXL functionalities.
 
 ```python
-# Initialize your license key
+# Inserting the license key
 
 ***Based on <https://ironsoftware.com/how-to/license-keys/>***
 
 License.LicenseKey = "IRONXL-MYLICENSE-KEY-1EF01"
 ```
 
-## Step 3: Confirm Your License Key
+## Step 3: Confirm Your License Key's Functionality
 
-### Examine the Activated License Key
+### Confirm Installation of the License Key
 
-To ensure your license key is properly set up, examine the `IsLicensed` attribute from the `License` module:
+To ensure your license key is active, you can check the **IsLicensed** property of the **License** module. Example code:
 
 ```python
-# Verify the licensing status
+# Verifying license key implementation
 
 ***Based on <https://ironsoftware.com/how-to/license-keys/>***
 
@@ -51,26 +53,26 @@ is_licensed = License.IsLicensed
 
 ### Check License Key Validity
 
-For verifying the validity of your license or trial key, utilize the code below:
+To validate your license or trial key, use the code snippet below:
 
 ```python
-# Validate the license key
+# Validate the license key for accuracy
 
 ***Based on <https://ironsoftware.com/how-to/license-keys/>***
 
 is_valid = License.IsValidLicense("IRONXL-MYLICENSE-KEY-1EF01")
 ```
 
-If `is_valid` is **True**, the key is correctly set and you're all set to proceed with IronXL. Conversely, a **False** return means the key is invalid.
+If the result is **True**, your key is valid, and you're set to use IronXL. If **False**, the key is not valid, and further action may be required.
 
-It's crucial to clean and republish your application after insertions for ensured functionality and to prevent potential errors.
+Ensure to clean and republish your application after updating the license key to prevent errors during deployment.
 
-## Step 4: Initiate Your Project
+## Step 4: Begin Your Development with IronXL
 
-To optimize your IronXL utilization, we strongly advise following our in-depth [Get Started with IronXL](https://ironsoftware.com/python/excel/docs/) guide. This guide offers extensive insights and examples critical for mastering IronXL usage in Python projects.
+Getting started with IronXL is straightforward when following our detailed [Get Started with IronXL guide](https://ironsoftware.com/python/excel/docs/). This guide offers extensive instructions and practical examples to acquaint you with IronXL's capabilities in Python projects.
 
-## Questions or Require Assistance?
+## Require Assistance or Support?
 
-Throughout the development stage, IronXL for Python is at your disposal, albeit requiring a license for actual deployments. License purchases and a trial version are available [here](https://ironsoftware.com/python/excel/licensing/). For further information, code samples, and rich documentation, visit our [IronXL for Python page](https://ironsoftware.com/python/excel/).
+While you can use `IronXL for Python` freely during development, deploying live projects requires a valid license. To [obtain a license or a trial](https://ironsoftware.com/python/excel/licensing/) and for detailed support resources, visit the [IronXL for Python section](https://ironsoftware.com/python/excel/) on our website.
 
-Our expert team is available to provide additional support or answer any questions. Feel free to [contact our support team](#live-chat-support).
+Should you need further help or have questions, our dedicated team is prepared to assist. Please, feel free to [reach out to our team](#live-chat-support).

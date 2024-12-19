@@ -1,1 +1,4 @@
-workSheet = workBook.CreateWorkSheet("GDPByCountry")
+from ironxl import *
+
+def run():
+    workSheet = workBook.CreateWorkSheet("GDPByCountry")
