@@ -6,4 +6,4 @@ license = { file = "LICENSE" }
 readme = "README.md"
 homepage = "https://github.com/iron-software/IronXLPython.Examples"
 keywords = ["IronXL for Python", "python", "How To Read Excel File", "ironxlpython.examples", "Tutorial"]
-dependencies = ["ironxl==2024.11.16"]
+dependencies = ["ironxl==2026.8.0.1"]
