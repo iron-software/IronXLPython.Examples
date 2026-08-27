@@ -1,5 +1,5 @@
 [project]
-name = "How To Read Excel File"
+name = "ironxl-python-how-to-read-excel-file"
 version = "1.0.0"
 description = "Code examples demonstrating IronXL for Python Feature: How To Read Excel File"
 license = { file = "LICENSE" }

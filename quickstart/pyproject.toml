@@ -1,5 +1,5 @@
 [project]
-name = "Quickstart"
+name = "ironxl-python-quickstart"
 version = "1.0.0"
 description = "Code examples demonstrating IronXL for Python Feature: Quickstart"
 license = { file = "LICENSE" }

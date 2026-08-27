@@ -1,5 +1,5 @@
 [project]
-name = "License Keys"
+name = "ironxl-python-license-keys"
 version = "1.0.0"
 description = "Code examples demonstrating IronXL for Python Feature: License Keys"
 license = { file = "LICENSE" }
