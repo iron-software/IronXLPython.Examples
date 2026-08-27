@@ -1,6 +1,6 @@
 # Working with Excel in Python Using IronXL
 
-***Based on <https://ironsoftware.com/tutorials/how-to-read-excel-file/>***
+> Full guide: [Working with Excel in Python Using IronXL](https://ironsoftware.com/tutorials/how-to-read-excel-file/)
 
 
 This tutorial offers Python programmers a detailed guide on how to leverage the IronXL library for reading and modifying Microsoft Excel files.
@@ -47,8 +47,6 @@ The `WorkBook` object in IronXL represents an Excel workbook. Open an Excel file
 ```python
 # Open an existing Excel file
 
-***Based on <https://ironsoftware.com/tutorials/how-to-read-excel-file/>***
-
 workbook = WorkBook.Load("Spreadsheets\\GDP.xlsx")
 ```
 
@@ -56,8 +54,6 @@ A `WorkBook` includes various `WorkSheet` entities, each corresponding to a shee
 
 ```python
 # Fetch a particular worksheet called 'GDPByCountry' from the workbook
-
-***Based on <https://ironsoftware.com/tutorials/how-to-read-excel-file/>***
 
 workSheet = workBook.GetWorkSheet("GDPByCountry")
 ```
@@ -68,8 +64,6 @@ You can create an Excel file by constructing a new `WorkBook`:
 
 ```python
 # Instantiate a new Workbook in XLSX format
-
-***Based on <https://ironsoftware.com/tutorials/how-to-read-excel-file/>***
 
 workBook = WorkBook(ExcelFileFormat.XLSX)
 ```
@@ -100,14 +94,10 @@ Access and edit the values in specific cells by retrieving the cell from a `Work
 ```python
 # Open an existing workbook and access the default worksheet
 
-***Based on <https://ironsoftware.com/tutorials/how-to-read-excel-file/>***
-
 workbook = WorkBook.Load("test.xlsx")
 worksheet = workbook.DefaultWorkSheet
 
 # Retrieve the cell at position B1
-
-***Based on <https://ironsoftware.com/tutorials/how-to-read-excel-file/>***
 
 cell = worksheet["B1"]
 ```
@@ -117,15 +107,11 @@ Each cell is accessed through the `Cell` object in IronXL. It provides propertie
 ```python
 # Reading and updating a cell value in B1
 
-***Based on <https://ironsoftware.com/tutorials/how-to-read-excel-file/>***
-
 cell = workSheet["B1"]
 value = cell.StringValue
 print(value)
 
 # Change value in the same cell
-
-***Based on <https://ironsoftware.com/tutorials/how-to-read-excel-file/>***
 
 cell.Value = "10.3289"
 print(cell.StringValue)
@@ -138,13 +124,9 @@ You can set cell formulas to carry out calculations or data transformations:
 ```python
 # Define a range and apply a formula through each cell in the range
 
-***Based on <https://ironsoftware.com/tutorials/how-to-read-excel-file/>***
-
 range_ = workSheet["D2:D101"]
 
 # Applying formula across range
-
-***Based on <https://ironsoftware.com/tutorials/how-to-read-excel-file/>***
 
 for y in range(2, i):
     cell = workSheet[f"C{y}"]
