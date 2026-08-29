@@ -1,6 +1,6 @@
 # Getting Started with IronXL for Python
 
-> Docs: [IronXL for Python documentation](https://ironsoftware.com/python/excel/docs/)
+> Docs: [IronXL for Python documentation](https://ironsoftware.com/python/excel/docs/?utm_source=github)
 
 
 IronXL for Python reads and writes Excel (XLS, XLSX, and CSV) files in Python 3 projects, with no copy of Excel installed on the server and no Interop. Its API is smaller than `Microsoft.Office.Interop.Excel`, and follows IronXL for .NET.
@@ -157,8 +157,8 @@ IronXL for Python simplifies Excel file handling with its user-friendly API, eli
 
 **IronXL for Python** is readily available for testing in development settings at no cost.
 
-To deploy in production, [acquire a commercial license](https://ironsoftware.com/python/excel/licensing/). [30-day trial licenses](https://ironsoftware.com/python/excel/trial-license) are available to evaluate its full capabilities.
+To deploy in production, [acquire a commercial license](https://ironsoftware.com/python/excel/licensing/?utm_source=github). [30-day trial licenses](https://ironsoftware.com/python/excel/trial-license?utm_source=github) are available to evaluate its full capabilities.
 
-For a comprehensive range of code samples, tutorials, license details, and documentation, visit the [IronXL for Python page](https://ironsoftware.com/python/excel/).
+For a comprehensive range of code samples, tutorials, license details, and documentation, visit the [IronXL for Python page](https://ironsoftware.com/python/excel/?utm_source=github).
 
-For additional support and queries, feel free to [contact our support team](https://ironsoftware.com#live-chat-support).
+For additional support and queries, feel free to [contact our support team](https://ironsoftware.com?utm_source=github#live-chat-support).

@@ -1,13 +1,13 @@
 # Working with Excel in Python Using IronXL
 
-> Full guide: [Working with Excel in Python Using IronXL](https://ironsoftware.com/python/excel/tutorials/how-to-read-excel-file/)
+> Full guide: [Working with Excel in Python Using IronXL](https://ironsoftware.com/python/excel/tutorials/how-to-read-excel-file/?utm_source=github)
 
 
 This tutorial offers Python programmers a detailed guide on how to use the IronXL library for reading and modifying Microsoft Excel files.
 
-IronXL is an extensive library for handling Excel files, compatible with multiple programming environments including [.NET](https://ironsoftware.com/csharp/excel/) and [Python](https://ironsoftware.com/python/excel/). This article specifically addresses the usage of IronXL in Python scripts for managing Excel data.
+IronXL is an extensive library for handling Excel files, compatible with multiple programming environments including [.NET](https://ironsoftware.com/csharp/excel/?utm_source=github) and [Python](https://ironsoftware.com/python/excel/?utm_source=github). This article specifically addresses the usage of IronXL in Python scripts for managing Excel data.
 
-For instructions on handling Microsoft Excel files with .NET, please refer to this [guide](https://ironsoftware.com/csharp/excel/tutorials/how-to-read-excel-file-csharp/).
+For instructions on handling Microsoft Excel files with .NET, please refer to this [guide](https://ironsoftware.com/csharp/excel/tutorials/how-to-read-excel-file-csharp/?utm_source=github).
 
 Using IronXL, Python developers can perform tasks involving Excel files efficiently and.
 
@@ -79,7 +79,7 @@ workBook = WorkBook(ExcelFileFormat.XLSX)
 Every `WorkBook` includes one or more `WorkSheet`s:
 
 <div class="content-img-align-center">
-  <a rel="nofollow" href="https://ironsoftware.com/img/tutorials/how-to-read-excel-file-csharp/work-book.png" target="_blank">
+  <a rel="nofollow" href="https://ironsoftware.com/img/tutorials/how-to-read-excel-file-csharp/work-book.png?utm_source=github" target="_blank">
     <img src="https://ironsoftware.com/img/tutorials/how-to-read-excel-file-csharp/work-book.png" alt="A workbook with two worksheets displayed in Excel." class="img-responsive add-shadow img-margin" style="max-width:100%;">
   </a>
   <p class="content__image-caption">View of a workbook with two worksheets in Excel.</p>

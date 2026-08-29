@@ -1,13 +1,13 @@
 # Utilizing IronXL with Python License Keys
 
-> Full guide: [Utilizing IronXL with Python License Keys](https://ironsoftware.com/python/excel/get-started/license-keys/)
+> Full guide: [Utilizing IronXL with Python License Keys](https://ironsoftware.com/python/excel/get-started/license-keys/?utm_source=github)
 
 
 ## Acquiring a License Key
 
 Incorporating an IronXL license key enables the deployment of your applications without limitations or watermarks.
 
-A license can be [purchased here](https://ironsoftware.com/python/excel/licensing/) or you can obtain a [complimentary 30-day trial key](https://ironsoftware.com/trial-license).
+A license can be [purchased here](https://ironsoftware.com/python/excel/licensing/?utm_source=github) or you can obtain a [complimentary 30-day trial key](https://ironsoftware.com/trial-license?utm_source=github).
 
 ---
 
@@ -21,7 +21,7 @@ pip install ironxl
 
 By executing this command, IronXL is added to your project environment and is ready for use.
 
-It's important to note that IronXL for Python is built on top of the [IronXL for .NET library](https://ironsoftware.com/csharp/excel/), and using it effectively requires the [.NET 6.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) installed on your system.
+It's important to note that IronXL for Python is built on top of the [IronXL for .NET library](https://ironsoftware.com/csharp/excel/?utm_source=github), and using it effectively requires the [.NET 6.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) installed on your system.
 
 ---
 
@@ -63,12 +63,12 @@ Ensure to rebuild and redeploy your application after setting up your license to
 
 ## Step 4: Launching Your IronXL Project
 
-For those new to IronXL, we recommend reading through our [Getting Started Guide](https://ironsoftware.com/python/excel/docs/), which is packed with detailed instructions and practical examples that aid in learning how to implement IronXL in Python projects.
+For those new to IronXL, we recommend reading through our [Getting Started Guide](https://ironsoftware.com/python/excel/docs/?utm_source=github), which is packed with detailed instructions and practical examples that aid in learning how to implement IronXL in Python projects.
 
 ## Questions or Require Assistance?
 
-While `IronXL for Python` is available for testing and development, deploying live projects requires a valid license, which you can [acquire from our licensing page](https://ironsoftware.com/python/excel/licensing/). We also offer a trial license for initial evaluations.
+While `IronXL for Python` is available for testing and development, deploying live projects requires a valid license, which you can [acquire from our licensing page](https://ironsoftware.com/python/excel/licensing/?utm_source=github). We also offer a trial license for initial evaluations.
 
-To explore more examples, access detailed documentation, or view licensing specifics, visit the [IronXL for Python resource](https://ironsoftware.com/python/excel/) on our site.
+To explore more examples, access detailed documentation, or view licensing specifics, visit the [IronXL for Python resource](https://ironsoftware.com/python/excel/?utm_source=github) on our site.
 
-For further support or queries, our dedicated team is ready to help you. Feel free to [reach out to us](https://ironsoftware.com/#live-chat-support).
+For further support or queries, our dedicated team is ready to help you. Feel free to [reach out to us](https://ironsoftware.com/?utm_source=github#live-chat-support).
