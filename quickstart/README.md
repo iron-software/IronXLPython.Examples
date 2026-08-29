@@ -157,7 +157,7 @@ IronXL for Python simplifies Excel file handling with its user-friendly API, eli
 
 **IronXL for Python** is readily available for testing in development settings at no cost.
 
-To deploy in production, [acquire a commercial license](https://ironsoftware.com/python/excel/licensing/?utm_source=github). [30-day trial licenses](https://ironsoftware.com/python/excel/trial-license?utm_source=github) are available to evaluate its full capabilities.
+To deploy in production, [acquire a commercial license](https://ironsoftware.com/python/excel/licensing/?utm_source=github). [30-day trial licenses](https://ironsoftware.com/python/excel/?utm_source=github#trial-license) are available to evaluate its full capabilities.
 
 For a comprehensive range of code samples, tutorials, license details, and documentation, visit the [IronXL for Python page](https://ironsoftware.com/python/excel/?utm_source=github).
 
