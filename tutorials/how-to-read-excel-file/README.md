@@ -1,6 +1,6 @@
 # Working with Excel in Python Using IronXL
 
-> Full guide: [Working with Excel in Python Using IronXL](https://ironsoftware.com/tutorials/how-to-read-excel-file/)
+> Full guide: [Working with Excel in Python Using IronXL](https://ironsoftware.com/python/excel/tutorials/how-to-read-excel-file/)
 
 
 This tutorial offers Python programmers a detailed guide on how to use the IronXL library for reading and modifying Microsoft Excel files.
@@ -147,6 +147,26 @@ workSheet = workBook.DefaultWorkSheet
 
 # Access range D2:D101 in the worksheet
 range_ = workSheet["D2:D101"]
+```
+
+Assign a formula to each cell in a column to compute it from the others:
+
+```python
+from ironxl import *
+
+# The guide opens a worksheet before this snippet, and sets `i` to the
+# last row holding data. Both are established here so the example runs on
+# its own.
+workBook = WorkBook.Load("Spreadsheets\\GDP.xlsx")
+workSheet = workBook.DefaultWorkSheet
+i = workSheet.RowCount
+
+# Iterate through all rows with a value
+for y in range(2, i):
+    # Get the C cell
+    cell = workSheet[f"C{y}"]
+    # Set the formula for the Percentage of Total column
+    cell.Formula = f"=B{y}/B{i}"
 ```
 
 ## Conclusion

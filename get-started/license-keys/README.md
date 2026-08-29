@@ -1,6 +1,6 @@
 # Utilizing IronXL with Python License Keys
 
-> Full guide: [Utilizing IronXL with Python License Keys](https://ironsoftware.com/get-started/license-keys/)
+> Full guide: [Utilizing IronXL with Python License Keys](https://ironsoftware.com/python/excel/get-started/license-keys/)
 
 
 ## Acquiring a License Key
