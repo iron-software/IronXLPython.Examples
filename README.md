@@ -1,21 +1,68 @@
-Iron Software offers a comprehensive suite of .NET libraries tailored to simplify document management, data extraction, and report generation tasks for developers primarily using C#. Let's explore the capabilities and offerings of various Iron Software products:
+# IronXLPython.Examples
 
-### IronPDF 
-IronPDF serves as a library that allows developers to create, render, and edit PDF files directly within .NET applications. This tool is particularly powerful for converting HTML to PDF, making it ideal for report generation and archiving web content in a format that preserves layout and style. Learn more about IronPDF and how to utilize its features at [IronPDF Documentation](https://ironpdf.com/docs/?utm_source=github).
+Runnable Python examples for [IronXL for Python](https://ironsoftware.com/python/excel/?utm_source=github), an Excel library that reads, writes, and edits XLSX, XLS, CSV, and TSV files without Microsoft Office or COM Interop.
 
-### IronOCR
-IronOCR stands out by enabling developers to extract text from images and PDFs using advanced Optical Character Recognition technology. Supporting over 127 languages, IronOCR is highly effective in transforming scanned documents into searchable and editable text, thus facilitating content management systems and digital archives. For further information, access the [IronOCR Guide](https://ironsoftware.com/csharp/ocr/docs/?utm_source=github).
+## Install
 
-### IronXL
-IronXL simplifies the process of manipulating Excel files by providing functionality to create, read, and edit spreadsheet files directly in .NET, without needing Microsoft Office Excel installed. It supports classic Excel formats along with newer .xlsx files. This is especially useful for data analysis applications and financial reporting tools. Detailed documentation can be found at [IronXL Documentation](https://ironsoftware.com/csharp/excel/docs/?utm_source=github).
+```bash
+pip install ironxl
+```
 
-### IronBarcode
-Developers can easily generate and scan barcodes and QR codes with IronBarcode. This tool supports a wide array of barcode formats, enhancing applications in retail, logistics, and inventory management with data tracking solutions. Learn how to integrate this into your applications by visiting [IronBarcode Guide](https://ironsoftware.com/csharp/barcode/docs/?utm_source=github).
+## Quickstart
 
-### Licensing and Support
-Iron Software provides flexible licensing options catered to different development needs, ranging from single developer licenses to enterprise-wide deals with unlimited project deployment and redistribution rights. For startups and individual developers, there’s also a free trial available to test full features without immediate commitment. For complex requirements and enterprise solutions, detailed licensing information is available at [Iron Software Licensing](https://ironsoftware.com/python/excel/licensing/?utm_source=github).
+```python
+from ironxl import *
 
-### Community and Support
-Iron Software is backed by a strong community and a dedicated technical support team. Developers can benefit from a wealth of resources including comprehensive documentation, a developer forum, and direct support options. To explore more and engage with the community, visit [Iron Software Community Resources](https://ironsoftware.com/customers/?utm_source=github).
+License.LicenseKey = "YOUR-LICENSE-KEY"
 
-Overall, Iron Software's suite of libraries presents a holistic approach to handling various file formats and data processing requirements in .NET environments, driving efficiency and scalability in software development projects.
+# Load an existing workbook and read a cell
+workbook = WorkBook.Load("sample.xlsx")
+worksheet = workbook.WorkSheets[0]
+print(worksheet["A2"].Value)
+
+# Indexing with a range string returns an iterable Range
+for cell in worksheet["A2:B10"]:
+    print(f"Cell {cell.AddressString} has value '{cell.Text}'")
+
+# Write a value and save
+worksheet["C1"].Value = "Updated"
+workbook.SaveAs("updated.xlsx")
+```
+
+IronXL for Python wraps the .NET library, so **members keep their .NET PascalCase names** — `SaveAs`, not `save_as`, and `WorkSheets`, not `worksheets`. A snake_case attribute is a sign the call is wrong. Ranges are reached by **indexing** the worksheet with a range string; there is no `range()` method.
+
+`WorkBook.Create(ExcelFileFormat.XLSX)` starts a new workbook and requires a license key, unlike loading, so set `License.LicenseKey` before creating.
+
+## What's in this repo
+
+Each folder contains a self-contained project with a `requirements.txt`. Run `pip install -r requirements.txt`, then `python program.py`:
+
+- `get-started/` — license-key setup
+- `quickstart/` — an end-to-end project scaffold with tests
+- `tutorials/` — a longer walkthrough covering reading an Excel file end to end
+
+## Common tasks covered
+
+- Loading XLSX and XLS workbooks and selecting worksheets
+- Reading cell values, text, and addresses across a range
+- Creating new workbooks and worksheets, and setting document metadata
+- Writing cell values and saving to XLSX, XLS, CSV, JSON, and XML
+- Cell formulas with automatic recalculation, read back as `DecimalValue`
+- Cell styling: borders, border types, and colours
+- Sorting a range ascending or descending
+
+## Platform support
+
+Python 3.7 and above. Windows, macOS, and Linux. See the [documentation](https://ironsoftware.com/python/excel/docs/?utm_source=github) for environment-specific notes.
+
+## Documentation and support
+
+- Full documentation: [ironsoftware.com/python/excel/docs](https://ironsoftware.com/python/excel/docs/?utm_source=github)
+- API reference: [ironsoftware.com/csharp/excel/object-reference/api](https://ironsoftware.com/csharp/excel/object-reference/api/?utm_source=github) — the Python package exposes the same members under their .NET names
+- PyPI package: [pypi.org/project/ironxl](https://pypi.org/project/ironxl/)
+- Issues with these examples: file directly on this repository
+- Product support: [support@ironsoftware.com](mailto:support@ironsoftware.com)
+
+## About
+
+This repository is maintained by [Iron Software](https://ironsoftware.com/?utm_source=github). IronXL for Python is a commercial library — see [licensing](https://ironsoftware.com/python/excel/licensing/?utm_source=github) for terms and trial details.
