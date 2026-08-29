@@ -1,9 +1,9 @@
 # Getting Started with IronXL for Python
 
-***Based on <https://ironsoftware.com/docs/docs/>***
+> Docs: [IronXL for Python documentation](https://ironsoftware.com/python/excel/docs/)
 
 
-IronXL for Python by Iron Software is a robust library that enables software developers to effortlessly manage Excel (XLS, XLSX, and CSV) files in Python 3 projects without the need for Excel to be installed on the server or using Interop. It offers a more efficient and streamlined API compared to `Microsoft.Office.Interop.Excel`, inspired by the success of IronXL for .NET.
+IronXL for Python reads and writes Excel (XLS, XLSX, and CSV) files in Python 3 projects, with no copy of Excel installed on the server and no Interop. Its API is smaller than `Microsoft.Office.Interop.Excel`, and follows IronXL for .NET.
 
 ## Install IronXL for Python
 
@@ -29,87 +29,43 @@ Note: On systems defaulting to Python 2.x, use `pip3` instead of `pip` to ensure
 Extracting data from an Excel spreadsheet involves straightforward commands through IronXL for Python.
 
 ```python
-# Import WorkBook from IronXL
-
-***Based on <https://ironsoftware.com/docs/docs/>***
-
 from ironxl import WorkBook
 
-# Open an existing Excel file
-
-***Based on <https://ironsoftware.com/docs/docs/>***
-
-workbook = WorkBook.load("sample.xlsx")
-
-# Get the first worksheet in the workbook
-
-***Based on <https://ironsoftware.com/docs/docs/>***
-
-worksheet = workbook.worksheets[0]
-
-# Fetch the value from cell A2 as an integer
-
-***Based on <https://ironsoftware.com/docs/docs/>***
-
-cell_value = worksheet["A2"].value
-
-# Display the value of cell A2
-
-***Based on <https://ironsoftware.com/docs/docs/>***
-
-print(f"The value in cell A2 is {cell_value}")
-
-# Loop through cells from A2 to B10 and print their contents
-
-***Based on <https://ironsoftware.com/docs/docs/>***
-
-for cell in worksheet.range("A2:B10"):
-    print(f"Cell {cell.address} contains {cell.text}")
+# Load an existing Excel spreadsheet.
+# Replace 'sample.xlsx' with the path to your Excel file as needed.
+workbook = WorkBook.Load("sample.xlsx")
+# Select the first worksheet from the workbook
+worksheet = workbook.WorkSheets[0]
+# Access cell A2 and read its value
+cell_value = worksheet["A2"].Value
+print(f"Cell A2 has value '{cell_value}'")
+# Iterate over the range A2:B10 and print each cell's address and text.
+# Indexing a worksheet with a range string returns a Range, which is
+# iterable; AddressString is the cell's location, Text its contents.
+for cell in worksheet["A2:B10"]:
+    print(f"Cell {cell.AddressString} has value '{cell.Text}'")
 ```
 
 ## Creating New Excel Documents
 
-Creating Excel documents is seamless and efficient with IronXL for Python.
+IronXL for Python creates Excel documents from scratch.
 
 ```python
-from ironxl import WorkBook, ExcelFileFormat, BorderType  # Essential imports from ironxl
+from ironxl import WorkBook, ExcelFileFormat, BorderType
 
-# Instantiate a new Excel workbook in XLSX format
-
-***Based on <https://ironsoftware.com/docs/docs/>***
-
-workbook = WorkBook.create(ExcelFileFormat.XLSX)
-
-# Set workbook metadata
-
-***Based on <https://ironsoftware.com/docs/docs/>***
-
-workbook.metadata.author = "IronXL"
-
-# Add and name a new worksheet
-
-***Based on <https://ironsoftware.com/docs/docs/>***
-
-worksheet = workbook.create_worksheet("main_sheet")
-
-# Populate data in cell "A1"
-
-***Based on <https://ironsoftware.com/docs/docs/>***
-
-worksheet["A1"].value = "Hello World"
-
-# Style cell "A2" with a specific border and color
-
-***Based on <https://ironsoftware.com/docs/docs/>***
-
-worksheet["A2"].style.bottom_border.set_color("#ff6600")
-worksheet["A2"].style.bottom_border.type = BorderType.double
-
-# Save the workbook to a file
-
-***Based on <https://ironsoftware.com/docs/docs/>***
-
-workbook.save_as("NewExcelFile.xlsx")
+# Create a new Excel WorkBook document in XLSX format
+workbook = WorkBook.Create(ExcelFileFormat.XLSX)
+# Set metadata for the workbook
+workbook.Metadata.Author = "IronXL"
+# Add a new blank worksheet named "main_sheet" to the workbook
+worksheet = workbook.CreateWorkSheet("main_sheet")
+# Add data to cell "A1"
+worksheet["A1"].Value = "Hello World"
+# Set the style for cell "A2" with a double bottom border and a specific color
+worksheet["A2"].Style.BottomBorder.SetColor("#ff6600")
+worksheet["A2"].Style.BottomBorder.Type = BorderType.Double
+# Save the Excel file with the specified filename
+workbook.SaveAs("NewExcelFile.xlsx")
 ```
 
 ## Exporting Data in Various Formats
@@ -117,29 +73,36 @@ workbook.save_as("NewExcelFile.xlsx")
 IronXL for Python supports exporting to several popular formats.
 
 ```python
-# Assuming workSheet is initialized
+from ironxl import *
 
-***Based on <https://ironsoftware.com/docs/docs/>***
+# The guide opens a workbook before this snippet; open one here so the
+# example runs on its own.
+workBook = WorkBook.Load("sample.xlsx")
+workSheet = workBook.WorkSheets[0]
 
-workSheet.save_as("NewExcelFile.xls")
-workSheet.save_as("NewExcelFile.xlsx")
-workSheet.save_as_csv("NewExcelFile.csv")
-workSheet.save_as_json("NewExcelFile.json")
-workSheet.save_as_xml("NewExcelFile.xml")
+workSheet.SaveAs("NewExcelFile.xls")
+workSheet.SaveAs("NewExcelFile.xlsx")
+workSheet.SaveAsCsv("NewExcelFile.csv")
+workSheet.SaveAsJson("NewExcelFile.json")
+workSheet.SaveAsXml("NewExcelFile.xml")
 ```
 
 ## Cell and Range Styling
 
-Apply styles to cells and ranges effortlessly.
+Apply styles to cells and ranges.
 
 ```python
-# Define cell content and style settings
+from ironxl import *
 
-***Based on <https://ironsoftware.com/docs/docs/>***
+# The guide creates a worksheet before this snippet; create one here so
+# the example runs on its own.
+workBook = WorkBook.Create(ExcelFileFormat.XLSX)
+workSheet = workBook.CreateWorkSheet("main_sheet")
 
-workSheet["A1"].value = "Hello World"
-workSheet["A2"].style.bottom_border.set_color("#ff6600")
-workSheet["A2"].style.bottom_border.type = BorderType.double
+# Set cell's value and styles
+workSheet["A1"].Value = "Hello World"
+workSheet["A2"].Style.BottomBorder.SetColor("#ff6600")
+workSheet["A2"].Style.BottomBorder.Type = BorderType.Double
 ```
 
 ## Sorting Cell Ranges
@@ -147,41 +110,25 @@ workSheet["A2"].style.bottom_border.type = BorderType.double
 Sort cell values efficiently within ranges using IronXL.
 
 ```python
-# Import required components
-
-***Based on <https://ironsoftware.com/docs/docs/>***
-
 from ironxl import WorkBook
 
-# Load the workbook
-
-***Based on <https://ironsoftware.com/docs/docs/>***
-
-workbook = WorkBook.load("sample.xls")
-
-# Select the first worksheet
-
-***Based on <https://ironsoftware.com/docs/docs/>***
-
-worksheet = workbook.worksheets[0]
-
-# Define a cell range
-
-***Based on <https://ironsoftware.com/docs/docs/>***
-
-selected_range = worksheet.range("A2:A8")
-
-# Sort the range in ascending order
-
-***Based on <https://ironsoftware.com/docs/docs/>***
-
-selected_range.sort_ascending()
-
-# Save the updated workbook
-
-***Based on <https://ironsoftware.com/docs/docs/>***
-
-workbook.save()
+# Import IronXL library for handling Excel files
+# Load an existing Excel workbook
+# 'sample.xls' is the file name of the Excel workbook to be loaded
+workbook = WorkBook.Load("sample.xls")
+# Access the first worksheet in the workbook
+# WorkSheets is the collection of all sheets in the workbook, 
+# and we select the first one using index 0
+worksheet = workbook.WorkSheets[0]
+# Select a range of cells from A2 to A8 in the worksheet
+# This specifies a contiguous range of cells starting from A2 and ending at A8
+selected_range = worksheet["A2:A8"]
+# Sort the selected range of cells in ascending order
+# This operation reorders the values in the specified range from smallest to largest
+selected_range.SortAscending()
+# Save the changes made to the workbook, including the sorted range
+# The workbook's state is updated with the changes after execution
+workbook.Save()
 ```
 
 ## Modifying Formulas
@@ -189,16 +136,17 @@ workbook.save()
 Modify and evaluate Excel formulas on-the-fly.
 
 ```python
-# Directly assign a formula to a cell
+from ironxl import *
 
-***Based on <https://ironsoftware.com/docs/docs/>***
+# The guide creates a worksheet before this snippet; create one here so
+# the example runs on its own.
+workBook = WorkBook.Create(ExcelFileFormat.XLSX)
+workSheet = workBook.CreateWorkSheet("main_sheet")
 
-workSheet["A1"].formula = "=SUM(A2:A10)"
-# Retrieve and display the calculated value
-
-***Based on <https://ironsoftware.com/docs/docs/>***
-
-sum_value = workSheet["A1"].decimal_value
+# Set a formula
+workSheet["A1"].Formula = "=SUM(A2:A10)"
+# Get the calculated value
+sum_ = workSheet["A1"].DecimalValue
 ```
 
 ## Why IronXL for Python?

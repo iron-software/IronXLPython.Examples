@@ -1,7 +1,11 @@
 from ironxl import *
 
 def run():
-    # Assuming workSheet is an existing instance of WorkSheet
+    # The guide opens a workbook before this snippet; open one here so the
+    # example runs on its own.
+    workBook = WorkBook.Load("sample.xlsx")
+    workSheet = workBook.WorkSheets[0]
+
     workSheet.SaveAs("NewExcelFile.xls")
     workSheet.SaveAs("NewExcelFile.xlsx")
     workSheet.SaveAsCsv("NewExcelFile.csv")

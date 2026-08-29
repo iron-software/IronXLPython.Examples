@@ -1,6 +1,6 @@
 # Utilizing IronXL with Python License Keys
 
-***Based on <https://ironsoftware.com/get-started/license-keys/>***
+> Full guide: [Utilizing IronXL with Python License Keys](https://ironsoftware.com/python/excel/get-started/license-keys/)
 
 
 ## Acquiring a License Key
@@ -32,8 +32,6 @@ Before working with IronXL, input your purchased or trial license key at the sta
 ```python
 # Set up the license key
 
-***Based on <https://ironsoftware.com/get-started/license-keys/>***
-
 License.LicenseKey = "IRONXL-MYLICENSE-KEY-1EF01"
 ```
 
@@ -46,8 +44,6 @@ To ensure that the license key is in place, use this line of code:
 ```python
 # Verify license application
 
-***Based on <https://ironsoftware.com/get-started/license-keys/>***
-
 is_licensed = License.IsLicensed
 ```
 
@@ -57,8 +53,6 @@ Confirm the effectiveness of your license key with the following code:
 
 ```python
 # Validate the specific license key
-
-***Based on <https://ironsoftware.com/get-started/license-keys/>***
 
 is_valid = License.IsValidLicense("IRONXL-MYLICENSE-KEY-1EF01")
 ```

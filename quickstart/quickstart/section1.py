@@ -1,22 +1,16 @@
 from ironxl import WorkBook
 
 def run():
-    # Load the necessary module from IronXL
-    # Load an existing Excel spreadsheet
+    # Load an existing Excel spreadsheet.
     # Replace 'sample.xlsx' with the path to your Excel file as needed.
-    workbook = WorkBook.load("sample.xlsx")
+    workbook = WorkBook.Load("sample.xlsx")
     # Select the first worksheet from the workbook
-    worksheet = workbook.worksheets[0]
-    # Access cell A2 and get its integer value
-    # Ensure the correct method or property is used to fetch the integer value.
-    # Use 'value' to directly access the cell content.
-    cell_value = worksheet["A2"].value
-    # Print out the value of the cell A2
-    # Utilizing formatted strings for clear output
+    worksheet = workbook.WorkSheets[0]
+    # Access cell A2 and read its value
+    cell_value = worksheet["A2"].Value
     print(f"Cell A2 has value '{cell_value}'")
-    # Iterate over a range of cells and print their address and text content
-    # The range is defined from A2 to B10, which captures all rows in this interval.
-    for cell in worksheet.range("A2:B10"):
-        # Access each cell in the specified range
-        # AddressString is used to get the cell's location as a string, and Text to get its content.
-        print(f"Cell {cell.address} has value '{cell.text}'")
+    # Iterate over the range A2:B10 and print each cell's address and text.
+    # Indexing a worksheet with a range string returns a Range, which is
+    # iterable; AddressString is the cell's location, Text its contents.
+    for cell in worksheet["A2:B10"]:
+        print(f"Cell {cell.AddressString} has value '{cell.Text}'")
