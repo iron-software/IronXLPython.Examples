@@ -7,7 +7,7 @@
 
 Incorporating an IronXL license key enables the deployment of your applications without limitations or watermarks.
 
-A license can be [purchased here](https://ironsoftware.com/python/excel/licensing/?utm_source=github) or you can obtain a [complimentary 30-day trial key](https://ironsoftware.com/trial-license?utm_source=github).
+A license can be [purchased here](https://ironsoftware.com/python/excel/licensing/?utm_source=github) or you can obtain a [complimentary 30-day trial key](https://ironsoftware.com/python/excel/?utm_source=github#trial-license).
 
 ---
 
