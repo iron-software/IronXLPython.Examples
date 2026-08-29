@@ -3,13 +3,13 @@
 > Full guide: [Working with Excel in Python Using IronXL](https://ironsoftware.com/tutorials/how-to-read-excel-file/)
 
 
-This tutorial offers Python programmers a detailed guide on how to leverage the IronXL library for reading and modifying Microsoft Excel files.
+This tutorial offers Python programmers a detailed guide on how to use the IronXL library for reading and modifying Microsoft Excel files.
 
 IronXL is an extensive library for handling Excel files, compatible with multiple programming environments including [.NET](https://ironsoftware.com/csharp/excel/) and [Python](https://ironsoftware.com/python/excel/). This article specifically addresses the usage of IronXL in Python scripts for managing Excel data.
 
 For instructions on handling Microsoft Excel files with .NET, please refer to this [guide](https://ironsoftware.com/csharp/excel/tutorials/how-to-read-excel-file-csharp/).
 
-Using IronXL, Python developers can perform tasks involving Excel files efficiently and effortlessly.
+Using IronXL, Python developers can perform tasks involving Excel files efficiently and.
 
 <hr class="separator">
 
