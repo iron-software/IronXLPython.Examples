@@ -45,15 +45,20 @@ This command installs IronXL, making it ready for use in your projects. Note, Ir
 The `WorkBook` object in IronXL represents an Excel workbook. Open an Excel file with the `WorkBook.Load` method by specifying the file's path:
 
 ```python
-# Open an existing Excel file
+from ironxl import *
 
+# Load existing spreadsheet
 workbook = WorkBook.Load("Spreadsheets\\GDP.xlsx")
 ```
 
 A `WorkBook` includes various `WorkSheet` entities, each corresponding to a sheet within the Excel file. Extract a specific sheet using `WorkBook.GetWorkSheet`:
 
 ```python
-# Fetch a particular worksheet called 'GDPByCountry' from the workbook
+from ironxl import *
+
+# The guide loads a workbook before this snippet; load one here so the
+# example runs on its own.
+workBook = WorkBook.Load("Spreadsheets\\GDP.xlsx")
 
 workSheet = workBook.GetWorkSheet("GDPByCountry")
 ```
@@ -63,8 +68,9 @@ workSheet = workBook.GetWorkSheet("GDPByCountry")
 You can create an Excel file by constructing a new `WorkBook`:
 
 ```python
-# Instantiate a new Workbook in XLSX format
+from ironxl import *
 
+# Create a new WorkBook with the specified Excel file format
 workBook = WorkBook(ExcelFileFormat.XLSX)
 ```
 
@@ -82,6 +88,12 @@ Every `WorkBook` includes one or more `WorkSheet`s:
 To add a new worksheet, you would use `workbook.create_worksheet` and specify its name.
 
 ```python
+from ironxl import *
+
+# The guide creates a workbook before this snippet; create one here so the
+# example runs on its own.
+workBook = WorkBook.Create(ExcelFileFormat.XLSX)
+
 workSheet = workBook.CreateWorkSheet("GDPByCountry")
 ```
 
@@ -92,27 +104,31 @@ workSheet = workBook.CreateWorkSheet("GDPByCountry")
 Access and edit the values in specific cells by retrieving the cell from a `WorkSheet`:
 
 ```python
-# Open an existing workbook and access the default worksheet
+from ironxl import *
 
+# Load existing spreadsheet
 workbook = WorkBook.Load("test.xlsx")
 worksheet = workbook.DefaultWorkSheet
-
-# Retrieve the cell at position B1
-
+# Access cell B1 in the worksheet
 cell = worksheet["B1"]
 ```
 
 Each cell is accessed through the `Cell` object in IronXL. It provides properties and methods for direct interaction with cell data.
 
 ```python
-# Reading and updating a cell value in B1
+from ironxl import *
 
+# The guide opens a worksheet before this snippet; open one here so the
+# example runs on its own.
+workBook = WorkBook.Load("Spreadsheets\\GDP.xlsx")
+workSheet = workBook.DefaultWorkSheet
+
+# Access cell B1 in the worksheet
 cell = workSheet["B1"]
+# Read the value of the cell as a string
 value = cell.StringValue
 print(value)
-
-# Change value in the same cell
-
+# Write a new value to the cell
 cell.Value = "10.3289"
 print(cell.StringValue)
 ```
@@ -122,15 +138,15 @@ print(cell.StringValue)
 You can set cell formulas to carry out calculations or data transformations:
 
 ```python
-# Define a range and apply a formula through each cell in the range
+from ironxl import *
 
+# The guide opens a worksheet before this snippet; open one here so the
+# example runs on its own.
+workBook = WorkBook.Load("Spreadsheets\\GDP.xlsx")
+workSheet = workBook.DefaultWorkSheet
+
+# Access range D2:D101 in the worksheet
 range_ = workSheet["D2:D101"]
-
-# Applying formula across range
-
-for y in range(2, i):
-    cell = workSheet[f"C{y}"]
-    cell.Formula = f"=B{y}/B{i}"
 ```
 
 ## Conclusion
